@@ -1,0 +1,40 @@
+/* Navigation start */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation .logo {
+    flex: 1;
+}
+
+.navigation .links {
+    flex: 1;
+    text-align: center;
+}
+
+.navigation .links ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.navigation .links ul li {
+    list-style: none;
+}
+
+.navigation .links ul li a {
+    color: inherit;
+    transition: .2s ease-in-out;
+}
+
+.navigation .links ul li a:hover {
+    color: var(--primary-color);
+}
+
+.navigation .cta {
+    flex: 1;
+    text-align: right;
+}
+/* Navigation end */
