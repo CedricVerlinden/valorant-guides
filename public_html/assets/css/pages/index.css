@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #D7263D;
+    --secondary-color: #17BEBB;
+    --text-color: #FFFBFE;
+    --background-color: #171A21;
+}
+
+
+/* Hero start */
+.hero {
+    height: 100vh;
+}
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+}
+
+.hero .left, .right {
+    flex: 1;
+}
+
+.hero .left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero .left h1 {
+    color: var(--primary-color);
+}
+
+.hero .left .top {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero .right {
+    text-align: right;
+}
+/* Hero end */

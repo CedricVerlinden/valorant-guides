@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
-
 :root {
     --primary-color: #D7263D;
     --secondary-color: #17BEBB;
@@ -17,6 +15,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
 
 /* Texts start */
 h1 {
@@ -91,46 +90,9 @@ button:hover {
 }
 /* Buttons end */
 
+
 /* Container start */
 .container {
     padding: 20px 70px 60px 70px;
 }
 /* Container end */
-
-
-/* Hero start */
-.hero {
-    height: 100vh;
-}
-
-.hero {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100vh;
-}
-
-.hero .left, .right {
-    flex: 1;
-}
-
-.hero .left {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.hero .left h1 {
-    color: var(--primary-color);
-}
-
-.hero .left .top {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hero .right {
-    text-align: right;
-}
-/* Hero end */
