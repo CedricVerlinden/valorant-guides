@@ -42,3 +42,108 @@
     text-align: right;
 }
 /* Hero end */
+
+
+/* Featured start */
+.featured {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.featured .top {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.featured .agents {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.featured .agents .bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.featured .agents .bottom .agent-card {
+    flex: 1;
+    border-radius: 20px;
+    padding: 70px 50px;
+    gap: 5px;
+    background-color: var(--primary-color);
+}
+
+.featured .agents .bottom .agent-card.gekko {
+    background-image: url('../../images/gekko-20.png');
+}
+
+.featured .agents .bottom .agent-card.harbor {
+    background-image: url('../../images/harbor-20.png');
+}
+
+.featured .agents .bottom .agent-card.fade {
+    background-image: url('../../images/fade-20.png');
+}
+
+.featured .agents .bottom .agent-card .name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.featured .agents .bottom .agent-card .role {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.featured .weapons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.featured .weapons .bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.featured .weapons .bottom .weapon-card {
+    flex: 1;
+    border-radius: 20px;
+    padding: 70px 50px;
+    gap: 5px;
+    background-color: var(--secondary-color);
+}
+
+.featured .weapons .bottom .weapon-card.vandal {
+    background-image: url('../../images/vandal-20.png');
+    background-size: cover;
+}
+
+.featured .weapons .bottom .weapon-card.sherrif {
+    background-image: url('../../images/sheriff-20.png');
+    background-size: cover;
+}
+
+.featured .weapons .bottom .weapon-card.operator {
+    background-image: url('../../images/operator-20.png');
+    background-size: cover;
+}
+
+.featured .weapons .bottom .weapon-card .type {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.featured .weapons .bottom .weapon-card .type .subheading.slash {
+    color: var(--background-color);
+}
