@@ -75,6 +75,8 @@
     padding: 70px 50px;
     gap: 5px;
     background-color: var(--primary-color);
+    transition: .2s ease-in-out;
+    background-repeat: no-repeat;
 }
 
 .featured .agents .bottom .agent-card.gekko {
@@ -128,7 +130,7 @@
     background-size: cover;
 }
 
-.featured .weapons .bottom .weapon-card.sherrif {
+.featured .weapons .bottom .weapon-card.sheriff {
     background-image: url('../../images/sheriff-20.png');
     background-size: cover;
 }
