@@ -52,6 +52,11 @@ a {
     font-size: 20px;
     font-weight: 400;
     color: inherit;
+    transition: .2s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-color);
 }
 
 .subheading {
@@ -73,7 +78,7 @@ button {
     border: none;
     padding: 12px 24px;
     border-radius: 5px;
-    transition: .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
     color: var(--text-color);
 }
 

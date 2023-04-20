@@ -1,122 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/head.css">
-    <link rel="stylesheet" href="./assets/css/navigation.css">
-    <link rel="stylesheet" href="./assets/css/pages/index.css">
-    <script src="./index.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/head.css" />
+    <link rel="stylesheet" href="./assets/css/navigation.css" />
+    <link rel="stylesheet" href="./assets/css/pages/index.css" />
+    <script type="module" src="./js/database.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="module">
+      import { getAllAgents, getAllWeapons } from "./js/database.js";
+
+      getAllAgents()
+        .then((agents) => {
+          console.log("All agents: ", agents);
+        })
+        .catch((error) => {
+          console.error("Error getting agents: ", error);
+        });
+
+      getAllWeapons()
+        .then((weapons) => {
+          console.log("All weapons: ", weapons);
+        })
+        .catch((error) => {
+          console.error("Error getting weapons: ", error);
+        });
+    </script>
     <title>Valorant Guides</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="navigation">
-            <div class="logo"><a href="./"><h2>Valorant Guides</h2></a></div>
-            <div class="links">
-                <ul>
-                    <li><a href="./agents.html">Agents</a></li>
-                    <li><a href="./weapons.html">Weapons</a></li>
-                    <li><a href="./stats.html">Stats</a></li>
-                </ul>
-            </div>
-            <div class="cta"><button class="btn-primary">Login</button></div>
+      <div class="navigation">
+        <div class="logo">
+          <a href="./"><h2>Valorant Guides</h2></a>
         </div>
-        <div class="hero">
-            <div class="left">
-                <div class="top">
-                    <h1>Unleash your inner hero</h1>
-                    <p class="subheading">Guides for heroic players</p>
-                </div>
-                <div class="bottom">
-                    <button class="btn-primary">  
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trophy-fill" viewBox="0 0 16 16">
-                            <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
-                        </svg>
-                        Clip of the day
-                    </button>
-                </div>
-            </div>
-            <div class="right">
-                <img src="./assets/images/hero.png" alt="">
-            </div>
+        <div class="links">
+          <ul>
+            <li><a href="./agents.html">Agents</a></li>
+            <li><a href="./weapons.html">Weapons</a></li>
+            <li><a href="./stats.html">Stats</a></li>
+          </ul>
         </div>
-        <div class="featured">
-            <div class="agents">
-                <div class="top">
-                    <h2>Agents</h2>
-                    <p class="subheading">Featured</p>
-                </div>
-                <div class="bottom">
-                    <div onmouseenter="hoverAgentCard('gekko')" class="agent-card gekko">
-                        <div class="name">
-                            <h4>21.</h4>
-                            <h3>Gekko</h3>
-                        </div>
-                        <div class="role">
-                            <img src="./assets/images/initiator.png">
-                            <p class="subheading">Initiator</p>
-                        </div>
-                    </div>
-                    <div onmouseenter="hoverAgentCard('harbor')" class="agent-card harbor">
-                        <div class="name">
-                            <h4>20.</h4>
-                            <h3>Harbor</h3>
-                        </div>
-                        <div class="role">
-                            <img src="./assets/images/controller.png">
-                            <p class="subheading">Controller</p>
-                        </div>
-                    </div>
-                    <div onmouseenter="hoverAgentCard('fade')" class="agent-card fade">
-                        <div class="name">
-                            <h4>19.</h4>
-                            <h3>Fade</h3>
-                        </div>
-                        <div class="role">
-                            <img src="./assets/images/initiator.png">
-                            <p class="subheading">Initiator</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="weapons">
-                <div class="top">
-                    <h2>Weapons</h2>
-                    <p class="subheading">Featured</p>
-                </div>
-                <div class="bottom">
-                    <div onmouseenter="hoverWeaponCard('vandal')" class="weapon-card vandal">
-                        <div class="name">
-                            <h3>Vandal</h3>
-                        </div>
-                        <div class="type">
-                            <p class="subheading slash">//</p>
-                            <p class="subheading">Rifle</p>
-                        </div>
-                    </div>
-                    <div onmouseenter="hoverWeaponCard('sheriff')" class="weapon-card sheriff">
-                        <div class="name">
-                            <h3>Sheriff</h3>
-                        </div>
-                        <div class="type">
-                            <p class="subheading slash">//</p>
-                            <p class="subheading">Sidearm</p>
-                        </div>
-                    </div>
-                    <div onmouseenter="hoverWeaponCard('operator')" class="weapon-card operator">
-                        <div class="name">
-                            <h3>Operator</h3>
-                        </div>
-                        <div class="type">
-                            <p class="subheading slash">//</p>
-                            <p class="subheading">Sniper</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="cta"><button class="btn-primary">Login</button></div>
+      </div>
+      <div class="hero">
+        <div class="left">
+          <div class="top">
+            <h1>Unleash your inner hero</h1>
+            <p class="subheading">Guides for heroic players</p>
+          </div>
+          <div class="bottom">
+            <button class="btn-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-trophy-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"
+                />
+              </svg>
+              Clip of the day
+            </button>
+          </div>
         </div>
+        <div class="right">
+          <img src="./assets/images/hero.png" alt="" />
+        </div>
+      </div>
+      <div class="featured">
+        <div class="agents">
+          <div class="top">
+            <h2>Agents</h2>
+            <p class="subheading">Featured</p>
+          </div>
+          <div class="bottom">
+            <script>
+              createAgentCard("gekko", "initiator");
+              createAgentCard("harbor", "controller");
+              createAgentCard("fade", "initiator");
+            </script>
+          </div>
+        </div>
+        <div class="weapons">
+          <div class="top">
+            <h2>Weapons</h2>
+            <p class="subheading">Featured</p>
+          </div>
+          <div class="bottom">
+            <script>
+              createWeaponCard("vandal", "rifle");
+              createWeaponCard("sheriff", "sidearm");
+              createWeaponCard("operator", "sniper");
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+          Copyright © 2023
+          <a href="http://www.cedricverlinden.com">Cédric Verlinden</a>
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

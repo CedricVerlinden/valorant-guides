@@ -5,6 +5,14 @@
     --background-color: #171A21;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container > :nth-child(n+3) {
+    margin-top: 160px;
+}
 
 /* Hero start */
 .hero {
@@ -75,20 +83,9 @@
     padding: 70px 50px;
     gap: 5px;
     background-color: var(--primary-color);
-    transition: .2s ease-in-out;
+    transition: background-position-x .2s ease-in-out;
     background-repeat: no-repeat;
-}
-
-.featured .agents .bottom .agent-card.gekko {
-    background-image: url('../../images/gekko-20.png');
-}
-
-.featured .agents .bottom .agent-card.harbor {
-    background-image: url('../../images/harbor-20.png');
-}
-
-.featured .agents .bottom .agent-card.fade {
-    background-image: url('../../images/fade-20.png');
+    cursor: pointer;
 }
 
 .featured .agents .bottom .agent-card .name {
@@ -121,31 +118,30 @@
     flex: 1;
     border-radius: 20px;
     padding: 70px 50px;
-    gap: 5px;
     background-color: var(--secondary-color);
+    cursor: pointer;
 }
 
-.featured .weapons .bottom .weapon-card.vandal {
-    background-image: url('../../images/vandal-20.png');
-    background-size: cover;
+.featured .weapons .bottom .weapon-card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform .2s ease-in-out;
 }
 
-.featured .weapons .bottom .weapon-card.sheriff {
-    background-image: url('../../images/sheriff-20.png');
-    background-size: cover;
-}
-
-.featured .weapons .bottom .weapon-card.operator {
-    background-image: url('../../images/operator-20.png');
-    background-size: cover;
-}
-
-.featured .weapons .bottom .weapon-card .type {
+.featured .weapons .bottom .weapon-card .info .type {
     display: flex;
     flex-direction: row;
     gap: 5px;
 }
 
-.featured .weapons .bottom .weapon-card .type .subheading.slash {
+.featured .weapons .bottom .weapon-card .info .type .subheading.slash {
     color: var(--background-color);
+    background-size: c;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }

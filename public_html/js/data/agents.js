@@ -1,0 +1,23 @@
+export const agents = [
+  { name: "Brimstone", role: "Controller", number: 1 },
+  { name: "Phoenix", role: "Duelist", number: 2 },
+  { name: "Sage", role: "Sentinel", number: 3 },
+  { name: "Sova", role: "Initiator", number: 4 },
+  { name: "Viper", role: "Controller", number: 5 },
+  { name: "Cypher", role: "Sentinel", number: 6 },
+  { name: "Reyna", role: "Duelist", number: 7 },
+  { name: "Killjoy", role: "Sentinel", number: 8 },
+  { name: "Breach", role: "Initiator", number: 9 },
+  { name: "Omen", role: "Controller", number: 10 },
+  { name: "Jett", role: "Duelist", number: 11 },
+  { name: "Raze", role: "Duelist", number: 12 },
+  { name: "Skye", role: "Initiator", number: 13 },
+  { name: "Yoru", role: "Duelist", number: 14 },
+  { name: "Astra", role: "Controller", number: 15 },
+  { name: "KAY/O", role: "Initiator", number: 16 },
+  { name: "Chamber", role: "Sentinel", number: 17 },
+  { name: "Neon", role: "Duelist", number: 18 },
+  { name: "Fade", role: "Initiator", number: 19 },
+  { name: "Harbor", role: "Conntroller", number: 20 },
+  { name: "Gekko", role: "Initiator", number: 21 }
+];
