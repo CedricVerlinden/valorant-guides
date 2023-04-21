@@ -80,6 +80,7 @@ function createWeaponCard(weapon, type) {
 function mouseOverAgentCard(agent) {
     const card = document.querySelector(`.featured .agents .bottom .agent-card.${agent}`);
 
+    card.style.backgroundColor = '#3D1D26';
     card.style.backgroundImage = `url('./assets/images/${agent}.png')`;
     card.style.backgroundPositionX = '100px';
 }
@@ -87,6 +88,7 @@ function mouseOverAgentCard(agent) {
 function mouseOutAgentCard(agent) {
     const card = document.querySelector(`.featured .agents .bottom .agent-card.${agent}`);
 
+    card.style.backgroundColor = '';
     card.style.backgroundImage = `url('./assets/images/${agent}-20.png')`;
     card.style.backgroundPositionX = '';
 }
@@ -101,6 +103,7 @@ function mouseOverWeaponCard(weapon) {
     const card = document.querySelector(`.featured .weapons .bottom .weapon-card.${weapon}`);
     const text = card.querySelector('.info');
     
+    card.style.backgroundColor = '#173B3F';
     card.style.backgroundImage = `url("./assets/images/${weapon}.png")`;
     text.style.transform = 'translateY(20px)';
 }
@@ -109,6 +112,7 @@ function mouseOutWeaponCard(weapon) {
     const card = document.querySelector(`.featured .weapons .bottom .weapon-card.${weapon}`);
     const text = card.querySelector('.info');
 
+    card.style.backgroundColor = '';
     card.style.backgroundImage = `url("./assets/images/${weapon}-20.png")`;
     text.style.transform = '';
 }

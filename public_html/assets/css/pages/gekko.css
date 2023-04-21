@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #D7263D;
+    --secondary-color: #17BEBB;
+    --text-color: #FFFBFE;
+    --background-color: #171A21;
+}
+
+.red {
+    color: var(--primary-color); 
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    gap: 80px;
+}
+
+.content .intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    height: 100vh;
+}
+
+.content .intro .left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.content .intro .left .information {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .intro .left .information .role {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.content .intro .right {
+    flex: 1;
+}
+
+.content .abilities {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.content .abilities .left {
+    flex: 1;
+    background-image: url('../../images/fade-20.png');
+}
+
+.content .abilities .right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content .abilities .right .abilities-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.content .abilities .right .abilities-wrapper .ability {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #173B40;
+}

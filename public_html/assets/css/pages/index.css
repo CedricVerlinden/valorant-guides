@@ -83,7 +83,7 @@
     padding: 70px 50px;
     gap: 5px;
     background-color: var(--primary-color);
-    transition: background-position-x .2s ease-in-out;
+    transition: background-position-x .2s ease-in-out, background-color .2s ease-in-out;
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -120,6 +120,7 @@
     padding: 70px 50px;
     background-color: var(--secondary-color);
     cursor: pointer;
+    transition: background-color .2s ease-in-out;
 }
 
 .featured .weapons .bottom .weapon-card .info {
