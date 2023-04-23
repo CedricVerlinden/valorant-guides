@@ -138,11 +138,5 @@
 
 .featured .weapons .bottom .weapon-card .info .type .subheading.slash {
     color: var(--background-color);
-    background-size: c;
-}
-
-.footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    background-size: cover;
 }

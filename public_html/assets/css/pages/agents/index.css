@@ -9,6 +9,10 @@
     color: var(--primary-color); 
 }
 
+.container > :nth-child(n+3) {
+    margin-top: 160px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -44,8 +48,20 @@
     gap: 5px;
 }
 
+.content .intro .left .bio {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .content .intro .right {
     flex: 1;
+    text-align: right;
+    height: 75%;
+}
+
+.content .intro .right img {
+    height: 100%;
 }
 
 .content .abilities {
@@ -56,23 +72,29 @@
 
 .content .abilities .left {
     flex: 1;
-    background-image: url('../../images/fade-20.png');
 }
 
 .content .abilities .right {
     display: flex;
     flex: 1;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
 }
 
 .content .abilities .right .abilities-wrapper {
     display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.content .abilities .right .abilities-wrapper .icons {
+    display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
-.content .abilities .right .abilities-wrapper .ability {
+.content .abilities .right .abilities-wrapper .icons .ability {
     display: flex;
     justify-content: center;
     align-items: center;

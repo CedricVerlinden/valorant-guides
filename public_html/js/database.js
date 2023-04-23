@@ -66,6 +66,7 @@ export function getAllAgents() {
             id: agent.id,
             name: agent.name,
             role: agent.role,
+            description: agent.description,
             number: agent.number,
           };
         });
@@ -112,4 +113,14 @@ export function getAllWeapons() {
       };
     };
   });
+}
+
+export async function getLastThreeAgents() {
+  const agents = await getAllAgents();
+  return agents.slice(-3);
+}
+
+export async function getLastThreeWeapons() {
+  const weapons = await getAllWeapons();
+  return weapons.slice(-3);
 }

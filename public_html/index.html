@@ -7,27 +7,7 @@
     <link rel="stylesheet" href="./assets/css/head.css" />
     <link rel="stylesheet" href="./assets/css/navigation.css" />
     <link rel="stylesheet" href="./assets/css/pages/index.css" />
-    <script type="module" src="./js/database.js"></script>
     <script src="./js/index.js"></script>
-    <script type="module">
-      import { getAllAgents, getAllWeapons } from "./js/database.js";
-
-      getAllAgents()
-        .then((agents) => {
-          console.log("All agents: ", agents);
-        })
-        .catch((error) => {
-          console.error("Error getting agents: ", error);
-        });
-
-      getAllWeapons()
-        .then((weapons) => {
-          console.log("All weapons: ", weapons);
-        })
-        .catch((error) => {
-          console.error("Error getting weapons: ", error);
-        });
-    </script>
     <title>Valorant Guides</title>
   </head>
   <body>
@@ -80,10 +60,10 @@
             <p class="subheading">Featured</p>
           </div>
           <div class="bottom">
-            <script>
-              createAgentCard("gekko", "initiator");
-              createAgentCard("harbor", "controller");
-              createAgentCard("fade", "initiator");
+            <script type="module">
+              import { getLastThreeAgents as agents } from './js/database.js';
+
+              createAgentCards(agents());
             </script>
           </div>
         </div>
@@ -94,9 +74,9 @@
           </div>
           <div class="bottom">
             <script>
-              createWeaponCard("vandal", "rifle");
-              createWeaponCard("sheriff", "sidearm");
-              createWeaponCard("operator", "sniper");
+              createWeaponCard('vandal', 'rifle');
+              createWeaponCard('sheriff', 'sidearm');
+              createWeaponCard('operator', 'sniper');
             </script>
           </div>
         </div>

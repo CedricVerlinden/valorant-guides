@@ -16,5 +16,5 @@ export const weapons = [
   { name: "Operator", type: "Sniper" },
   { name: "Ares", type: "Heavy" },
   { name: "Odin", type: "Heavy" },
-  { name: "Tactical Knife", type: "Melee" }
+  { name: "Knife", type: "Melee" }
 ];

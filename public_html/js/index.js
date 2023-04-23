@@ -1,4 +1,4 @@
-function createAgentCard(agent, role) {
+function createAgentCard(agent, role, number) {
     var agentWrapper = document.querySelector('.featured .agents .bottom');
     
     var agentCardDiv = document.createElement('div');
@@ -7,6 +7,8 @@ function createAgentCard(agent, role) {
     
     agentCardDiv.classList.add('agent-card');
     agentCardDiv.classList.add(agent);
+    nameDiv.classList.add('name');
+    roleDiv.classList.add('role');
 
     agentCardDiv.addEventListener('mouseover', function() {
         mouseOverAgentCard(agent);
@@ -20,19 +22,25 @@ function createAgentCard(agent, role) {
         clickAgentCard(agent);
     });
 
-    agentCardDiv.style.backgroundImage = `url('./assets/images/${agent}-20.png')`;
+    agentCardDiv.style.backgroundImage = `url('./assets/images/agents/${agent}-20.png')`;
     agentCardDiv.style.backgroundSize = 'cover';
 
-    nameDiv.classList.add('name');
-    roleDiv.classList.add('role');
 
-    nameDiv.innerHTML = "<h4>21.</h4>" + `<h3>${agent}</h3>`;
-    roleDiv.innerHTML = `<img src='./assets/images/${role}.png'>` + `<p class='subheading'>${role}</p>`
+    nameDiv.innerHTML = `<h4>${number}.</h4>` + `<h3>${agent}</h3>`;
+    roleDiv.innerHTML = `<img src='./assets/images/roles/${role}.png'>` + `<p class='subheading'>${role}</p>`
 
     agentCardDiv.appendChild(nameDiv);
     agentCardDiv.appendChild(roleDiv);
 
     agentWrapper.appendChild(agentCardDiv);
+}
+
+function createAgentCards(agents) {
+    agents.then(function(result) {
+        result.reverse().forEach(function(agent) {
+            createAgentCard(agent.name, agent.role, agent.number);
+        });
+    });
 }
 
 function createWeaponCard(weapon, type) {
@@ -58,7 +66,7 @@ function createWeaponCard(weapon, type) {
         clickWeaponCard(weapon);
     });
 
-    weaponCardDiv.style.backgroundImage = `url('./assets/images/${weapon}-20.png')`;
+    weaponCardDiv.style.backgroundImage = `url('./assets/images/weapons/${weapon}-20.png')`;
     weaponCardDiv.style.backgroundSize = 'cover';
 
     infoDiv.classList.add('info');
@@ -81,7 +89,7 @@ function mouseOverAgentCard(agent) {
     const card = document.querySelector(`.featured .agents .bottom .agent-card.${agent}`);
 
     card.style.backgroundColor = '#3D1D26';
-    card.style.backgroundImage = `url('./assets/images/${agent}.png')`;
+    card.style.backgroundImage = `url('./assets/images/agents/${agent}.png')`;
     card.style.backgroundPositionX = '100px';
 }
 
@@ -89,7 +97,7 @@ function mouseOutAgentCard(agent) {
     const card = document.querySelector(`.featured .agents .bottom .agent-card.${agent}`);
 
     card.style.backgroundColor = '';
-    card.style.backgroundImage = `url('./assets/images/${agent}-20.png')`;
+    card.style.backgroundImage = `url('./assets/images/agents/${agent}-20.png')`;
     card.style.backgroundPositionX = '';
 }
 
@@ -104,7 +112,7 @@ function mouseOverWeaponCard(weapon) {
     const text = card.querySelector('.info');
     
     card.style.backgroundColor = '#173B3F';
-    card.style.backgroundImage = `url("./assets/images/${weapon}.png")`;
+    card.style.backgroundImage = `url("./assets/images/weapons${weapon}.png")`;
     text.style.transform = 'translateY(20px)';
 }
 
@@ -113,7 +121,7 @@ function mouseOutWeaponCard(weapon) {
     const text = card.querySelector('.info');
 
     card.style.backgroundColor = '';
-    card.style.backgroundImage = `url("./assets/images/${weapon}-20.png")`;
+    card.style.backgroundImage = `url("./assets/images/weapons${weapon}-20.png")`;
     text.style.transform = '';
 }
 

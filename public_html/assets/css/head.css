@@ -106,6 +106,6 @@ button:hover {
 
 /* Container start */
 .container {
-    padding: 20px 70px 60px 70px;
+    padding: 20px 70px 60px 70px !important;
 }
 /* Container end */
