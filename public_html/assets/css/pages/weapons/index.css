@@ -1,0 +1,58 @@
+:root {
+    --primary-color: #D7263D;
+    --secondary-color: #17BEBB;
+    --text-color: #FFFBFE;
+    --background-color: #171A21;
+}
+
+.red {
+    color: var(--primary-color); 
+}
+
+.container > :nth-child(n+3) {
+    margin-top: 160px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    gap: 80px;
+}
+
+.content .intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    height: 100vh;
+}
+
+.content .intro .left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content .intro .left .information {
+    display: flex;
+    flex-direction: column;
+}
+
+.content .intro .left .bio {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content .intro .right {
+    flex: 1;
+    text-align: right;
+    width: 75%;
+}
+
+.content .intro .right img {
+    height: 100%;
+}

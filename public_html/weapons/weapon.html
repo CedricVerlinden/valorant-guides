@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/head.css" />
+    <link rel="stylesheet" href="../assets/css/navigation.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/pages/weapons/index.css" />
+    <script type="module">
+      import { getAllWeapons as weapons } from "../js/database.js";
+
+      const url = new URLSearchParams(window.location.search);
+
+      if (!url.has("weapon")) {
+        window.location.href = "../";
+      }
+
+      weapons().then((data) => {
+        const weapon = data.find((weapon) => {
+          return weapon.name.toLowerCase() === url.get("weapon").toLowerCase();
+        });
+
+        if (weapon == null) {
+          window.location.href = "../";
+        }
+
+        document.title = `${weapon.name} - Valorant Guides`;
+        document.getElementById("weapon-name").innerHTML = weapon.name;
+        document.getElementById("description").innerHTML = weapon.description;
+
+        document.getElementById("weapon-image").src = `../assets/images/weapons/${weapon.name.toLowerCase()}.png`;
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigation">
+        <div class="logo">
+          <a href="../"><h2>Valorant Guides</h2></a>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="../agents.html">Agents</a></li>
+            <li><a href="../weapons.html">Weapons</a></li>
+            <li><a href="../stats.html">Stats</a></li>
+          </ul>
+        </div>
+        <div class="cta"><button class="btn-primary">Login</button></div>
+      </div>
+      <div class="content">
+        <div class="intro">
+          <div class="left">
+            <div class="information">
+              <h1 id="weapon-name"></h1>
+            </div>
+            <div class="bio">
+              <p class="subheading">// <span class="red">Description</span></p>
+              <p id="description"></p>
+            </div>
+          </div>
+          <div class="right">
+            <img id="weapon-image" />
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+          Copyright © 2023
+          <a href="http://www.cedricverlinden.com">Cédric Verlinden</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

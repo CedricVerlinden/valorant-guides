@@ -23,6 +23,7 @@
 .content .intro {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 80px;
@@ -33,7 +34,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
 }
 
 .content .intro .left .information {
@@ -57,7 +58,7 @@
 .content .intro .right {
     flex: 1;
     text-align: right;
-    height: 75%;
+    width: 75%;
 }
 
 .content .intro .right img {
@@ -67,11 +68,13 @@
 .content .abilities {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 50px;
 }
 
 .content .abilities .left {
     flex: 1;
+    min-width: 500px;
 }
 
 .content .abilities .right {
@@ -101,4 +104,14 @@
     padding: 10px;
     border-radius: 10px;
     background-color: #173B40;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.content .abilities .right .abilities-wrapper .icons .ability.active {
+    background-color: #1F5B5F;
+}
+
+.content .abilities .right .abilities-wrapper .icons .ability:hover {
+    cursor: pointer;
+    background-color: #1F5B5F;
 }

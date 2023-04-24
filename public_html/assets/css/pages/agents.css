@@ -1,0 +1,46 @@
+:root {
+    --primary-color: #D7263D;
+    --secondary-color: #17BEBB;
+    --text-color: #FFFBFE;
+    --background-color: #171A21;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container > :nth-child(n+2) {
+    margin-top: 80px;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.content .agent-card {
+    flex: 1;
+    border-radius: 20px;
+    padding: 70px 50px;
+    gap: 5px;
+    background-color: var(--primary-color);
+    transition: background-position-x .2s ease-in-out, background-color .2s ease-in-out;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.content .agent-card .name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.content .agent-card .role {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}

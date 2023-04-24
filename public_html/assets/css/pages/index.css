@@ -5,6 +5,10 @@
     --background-color: #171A21;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     display: flex;
     flex-direction: column;

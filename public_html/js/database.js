@@ -1,5 +1,6 @@
 import { agents as agentsData } from "./data/agents.js";
 import { weapons as weaponsData } from "./data/weapons.js";
+import { abilities as abilitiesData } from "./data/abilities.js";
 
 indexedDB.deleteDatabase("valorant_guides");
 
@@ -21,6 +22,13 @@ request.onupgradeneeded = (event) => {
   agentsTable.createIndex("role", "role", { unique: false });
   agentsTable.createIndex("numbe", "number", { unique: true });
 
+  let abilitiesTable = db.createObjectStore("abilities", {
+    keyPath: "id",
+    autoIncrement: true,
+  });
+  abilitiesTable.createIndex("name", "name", { unique: true });
+  abilitiesTable.createIndex("abilities", "abilities", { unique: false });
+
   let weaponsTable = db.createObjectStore("weapons", {
     keyPath: "id",
     autoIncrement: true,
@@ -36,6 +44,12 @@ request.onsuccess = (event) => {
   let agentsStore = agentsTransaction.objectStore("agents");
   agentsData.forEach(function (agent) {
     agentsStore.add(agent);
+  });
+
+  let abilitiesTransaction = db.transaction("abilities", "readwrite");
+  let abilitiesStore = abilitiesTransaction.objectStore("abilities");
+  abilitiesData.forEach(function (ability) {
+    abilitiesStore.add(ability);
   });
 
   let weaponsTransaction = db.transaction("weapons", "readwrite");
@@ -81,6 +95,40 @@ export function getAllAgents() {
   });
 }
 
+export function getAllAbilities() {
+  return new Promise((resolve, reject) => {
+    var request = window.indexedDB.open("valorant_guides");
+
+    request.onerror = (event) => {
+      reject(event.target.error);
+    };
+
+    request.onsuccess = (event) => {
+      var db = event.target.result;
+      var transaction = db.transaction(["abilities"], "readonly");
+      var objectStore = transaction.objectStore("abilities");
+      var getRequest = objectStore.getAll();
+
+      getRequest.onsuccess = (event) => {
+        var abilities = event.target.result;
+        var mappedAbilities = abilities.map((ability) => {
+          return {
+            id: ability.id,
+            name: ability.name,
+            abilities: ability.abilities,
+          };
+        });
+
+        resolve(mappedAbilities);
+      };
+
+      getRequest.onerror = (event) => {
+        reject(event.target.error);
+      };
+    };
+  });
+}
+
 export function getAllWeapons() {
   return new Promise((resolve, reject) => {
     var request = window.indexedDB.open("valorant_guides");
@@ -101,6 +149,7 @@ export function getAllWeapons() {
           return {
             id: weapon.id,
             name: weapon.name,
+            description: weapon.description,
             type: weapon.type,
           };
         });
