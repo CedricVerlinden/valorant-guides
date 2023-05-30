@@ -23,7 +23,7 @@
             <li><a href="./weapons.html">Weapons</a></li>
           </ul>
         </div>
-        <div class="cta"><button class="btn-primary">Login</button></div>
+        <div class="cta"></div>
       </div>
       <div class="hero">
         <div class="left">
@@ -63,9 +63,13 @@
           </div>
           <div class="bottom">
             <script type="module">
-              import { getLastThreeAgents as agents } from './js/database.js';
+              import { getLastThreeAgents as agents } from "./js/database.js";
 
-              createAgentCards('.featured .agents .bottom', '.featured .agents .bottom .agent-card', agents());
+              createAgentCards(
+                ".featured .agents .bottom",
+                ".featured .agents .bottom .agent-card",
+                agents()
+              );
             </script>
           </div>
         </div>
@@ -76,12 +80,45 @@
           </div>
           <div class="bottom">
             <script>
-              createWeaponCard('.featured .weapons .bottom', '.featured .weapons .bottom .weapon-card', 'vandal', 'rifle');
-              createWeaponCard('.featured .weapons .bottom', '.featured .weapons .bottom .weapon-card','sheriff', 'sidearm');
-              createWeaponCard('.featured .weapons .bottom', '.featured .weapons .bottom .weapon-card','operator', 'sniper');
+              createWeaponCard(
+                ".featured .weapons .bottom",
+                ".featured .weapons .bottom .weapon-card",
+                "vandal",
+                "rifle"
+              );
+              createWeaponCard(
+                ".featured .weapons .bottom",
+                ".featured .weapons .bottom .weapon-card",
+                "sheriff",
+                "sidearm"
+              );
+              createWeaponCard(
+                ".featured .weapons .bottom",
+                ".featured .weapons .bottom .weapon-card",
+                "operator",
+                "sniper"
+              );
             </script>
           </div>
         </div>
+      </div>
+      <div class="contact">
+        <h2>Contact Us</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
       </div>
       <div class="footer">
         <p>

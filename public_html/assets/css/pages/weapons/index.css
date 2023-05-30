@@ -1,58 +1,61 @@
 :root {
-    --primary-color: #D7263D;
-    --secondary-color: #17BEBB;
-    --text-color: #FFFBFE;
-    --background-color: #171A21;
+  --primary-color: #d7263d;
+  --secondary-color: #17bebb;
+  --text-color: #fffbfe;
+  --background-color: #171a21;
 }
 
 .red {
-    color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
-.container > :nth-child(n+3) {
-    margin-top: 160px;
+.container > :nth-child(n + 3) {
+  margin-top: 160px;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 80px;
-    gap: 80px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  gap: 80px;
 }
 
 .content .intro {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 80px;
-    height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  height: 100vh;
 }
 
 .content .intro .left {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .content .intro .left .information {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .content .intro .left .bio {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .content .intro .right {
-    flex: 1;
-    text-align: right;
-    width: 75%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1;
 }
 
 .content .intro .right img {
-    height: 100%;
+  max-width: 100%;
+  flex-basis: 50%;
 }
